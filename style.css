@@ -1,0 +1,235 @@
+/* #CSS RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color-scheme: dark light;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+}
+
+body {
+    min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+:has(:target) {
+    scroll-behavior: smooth;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* #NAV */
+
+header {
+    background-image: url(img/header_backround.png);
+    transition: height 200ms;
+    background-position: bottom;
+}
+
+nav * {
+    font-size: 14pt;
+    font-weight: normal;
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav h2 {
+    font-weight: bold;
+}
+
+nav ul:not(details ul) {
+    margin-inline: auto;
+    padding-block: 1em;
+    width: 80vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    position: relative;
+    padding: 0.33em;
+    color: #2db2e6;
+}
+
+nav :is(a:hover, a.active) {
+    text-shadow: 0 0 20px #2db2e6;
+}
+
+nav :is(a:hover, a.active)::after {
+    content: ']';
+    right: -0.67em;
+}
+
+nav :is(a:hover, a.active)::before {
+    content: '[';
+    left: -0.67em;
+}
+
+nav :is(a:hover, a.active)::before,
+nav :is(a:hover, a.active)::after {
+    top: calc(12.5%);
+    scale: 125%;
+    display: block;
+    position: absolute;
+    font-weight: bold;
+    color: white;
+}
+
+nav details * {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav details li {
+    margin-top: 1em;
+}
+
+nav details li a {
+    color: transparent;
+}
+
+nav details[open=''] li a {
+    color: #2db2e6;
+}
+
+/* #MAIN */
+
+body {
+    background-image: url(img/background.jpg);
+}
+
+main {
+    padding-top: 1em;
+}
+
+main :is(h1, h2, h3, h4, h5, h6) {
+    text-align: center;
+}
+
+/* #GALLERY */
+
+section:has(#gallery-grid) {
+    width: 1080px;
+    margin-inline: auto;
+}
+
+#gallery-grid {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    margin: 1em 0;
+}
+
+#gallery-grid details[open=''] img {
+    filter: brightness(40%);
+}
+
+#gallery-grid summary {
+    list-style: none;
+}
+
+#gallery-grid details {
+    position: relative;
+}
+
+#gallery-grid details .read-more {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    color: white;
+    padding: 1em;
+}
+
+#gallery-grid details .read-more a {
+    margin: auto;
+    background-color: lightgray;
+    padding: 0.5em;
+    color: black;
+    text-decoration: none;
+    border-radius: 5pt;
+    border: white outset 1pt;
+}
+
+#gallery-grid details .read-more a:hover {
+    filter: brightness(80%);
+}
+
+#gallery-grid details .read-more a:visited {
+    color: black;
+}
+
+/* #CONTACT */
+
+form {
+    width: 1080px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    border-radius: 5pt;
+}
+
+input {
+    margin-bottom: 1em;
+    font-size: 1rem;
+    padding: 1ch 1ch;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+textarea {
+    resize: vertical;
+    font-size: 1.1rem;
+    min-height: 2.1lh;
+    margin-bottom: 1em;
+    padding: 1ch 1ch;
+}
+
+button {
+    width: fit-content;
+    padding: 0.25em;
+}
